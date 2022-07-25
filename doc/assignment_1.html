@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Assignment 1: Basic Concepts of Object-Oriented Programming | 20 Points - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p:last-child{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{text-align:center;background-color:inherit;border-radius:0;white-space:inherit;overflow:visible}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p:last-child,.markdown-body .alert>ul:last-child{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.figma{display:table;position:relative;width:100%;padding-bottom:56.25%}.figma iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%;border:1px solid #eee}.markmap-container{height:300px}.markmap-container>svg{width:100%;height:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{height:40px;padding:10px 4px;border-top-left-radius:0;border-bottom-left-radius:0}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:20px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:50%;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;text-decoration:none;padding-left:22px}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;letter-spacing:.025em;font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-inner comment-enabled" data-hard-breaks="true" style=""><style>
+td {
+  font-size: 14px
+}
+th {
+  font-size: 14px
+}
+</style><h1 id="Assignment-1-Basic-Concepts-of-Object-Oriented-Programming--20-Points" data-id="Assignment-1-Basic-Concepts-of-Object-Oriented-Programming--20-Points" style=""><a class="anchor hidden-xs" href="#Assignment-1-Basic-Concepts-of-Object-Oriented-Programming--20-Points" title="Assignment-1-Basic-Concepts-of-Object-Oriented-Programming--20-Points"><span class="octicon octicon-link"></span></a><span>Assignment 1: Basic Concepts of Object-Oriented Programming | 20 Points</span></h1><h2 id="Introduction" data-id="Introduction" style=""><a class="anchor hidden-xs" href="#Introduction" title="Introduction"><span class="octicon octicon-link"></span></a><span>Introduction</span></h2><p><span>The overall goal of Assignment 1 is to practice the basics of object-oriented programming. This assignment consists of two parts:</span></p><ol>
+<li><span>The first part of this assignment is a small warm-up task to get you started. In the warm-up task, you will implement a simple banking system where users can create an account and add, retrieve, and transfer money.</span></li>
+<li><span>In the second part of this assignment, you will create a system for exploring datasets. The system is able to load and store a dataset, and it includes functionality for exploring the dataset, such as plotting columns and calculating simple metrics.</span></li>
+</ol><h2 id="General-Information" data-id="General-Information" style=""><a class="anchor hidden-xs" href="#General-Information" title="General-Information"><span class="octicon octicon-link"></span></a><span>General Information</span></h2><p><span>Make sure all the output and return values are exactly the same as stated in the Task description, else a violation could lead to 0 points on that Task.</span></p><h3 id="Deadline" data-id="Deadline" style=""><a class="anchor hidden-xs" href="#Deadline" title="Deadline"><span class="octicon octicon-link"></span></a><span>Deadline</span></h3><p><span>The deadline for this assignment is on Wednesday, </span><strong><span>April 27, 2022</span></strong><span> at </span><strong><span>23:59:00</span></strong><span>. This is a hard deadline; therefore, no late submissions will be accepted.</span></p><p><span>You submit your assignment in the TeachCenter. Multiple submissions are allowed, so you can submit your code as often as you want. The last submission before the deadline will be graded; we have no access to previous versions.</span></p><h3 id="Submission-Files" data-id="Submission-Files" style=""><a class="anchor hidden-xs" href="#Submission-Files" title="Submission-Files"><span class="octicon octicon-link"></span></a><span>Submission Files</span></h3><p><span>When you have completed the assignment, you will submit four files:</span></p><ol>
+<li><code>banking_system.py</code><span>: This file should contain all your code for the warm-up task (the banking system).</span></li>
+<li><code>plotter.py</code><span>: This file should contain the Plotter classes.</span></li>
+<li><code>dataset_explorer.py</code><span>: This file should contain the </span><code>DatasetExplorer</code><span> class.</span></li>
+<li><code>config_reader.py</code><span>: This file should contain the </span><code>ConfigReader</code><span> class.</span></li>
+</ol><p><span>Do not submit any other files. Make sure you use Python version ≥3.9.</span></p><h3 id="Comment-Header" data-id="Comment-Header" style=""><a class="anchor hidden-xs" href="#Comment-Header" title="Comment-Header"><span class="octicon octicon-link"></span></a><span>Comment Header</span></h3><p><strong><span>Every submitted file</span></strong><span> must contain a comment header with the following information at its top:</span></p><pre><code class="python hljs"><span class="hljs-comment">################################################################################</span>
+<span class="hljs-comment"># Author:      Firstname Lastname</span>
+<span class="hljs-comment"># MatNr:       01234567</span>
+<span class="hljs-comment"># File:        &lt;file_name&gt;.py</span>
+<span class="hljs-comment"># Description: ... short description of the file ...</span>
+<span class="hljs-comment"># Comments:    ... comments for the tutors ...</span>
+<span class="hljs-comment">#              ... can be multiline ...</span>
+<span class="hljs-comment">################################################################################</span>
+</code></pre><h3 id="Coding-Standard-and-Code-Quality" data-id="Coding-Standard-and-Code-Quality" style=""><a class="anchor hidden-xs" href="#Coding-Standard-and-Code-Quality" title="Coding-Standard-and-Code-Quality"><span class="octicon octicon-link"></span></a><span>Coding Standard and Code Quality:</span></h3><p><span>Follow the rules and guidelines outlined in </span><a href="https://hackmd.io/@info/info2_cs" target="_blank" rel="noopener"><span>this document.</span></a></p><p><span>In this assignment, a maximum of 5 points will be deducted for coding standard violations.</span></p><h3 id="Allowed-Packages" data-id="Allowed-Packages" style=""><a class="anchor hidden-xs" href="#Allowed-Packages" title="Allowed-Packages"><span class="octicon octicon-link"></span></a><span>Allowed Packages</span></h3><p><span>Apart from the standard library, only use the following packages. Additional ones will not be available in our testing environment. </span><!-- When the task description specifies the usage of a given module (e.g. `csv`), don't use others. --></p><pre><code>numpy
+pandas
+scipy
+matplotlib
+plotly
+</code></pre><h3 id="Automated-Testing-amp-Feedback" data-id="Automated-Testing-amp-Feedback" style=""><a class="anchor hidden-xs" href="#Automated-Testing-amp-Feedback" title="Automated-Testing-amp-Feedback"><span class="octicon octicon-link"></span></a><span>Automated Testing &amp; Feedback</span></h3><p><span>Your submission will be run through an automated testing system for grading. To avoid ‘but it worked on my machine’-situations, we will run the testing system once every Monday on all submissions uploaded to the TeachCenter by 18:00. You will receive feedback via e-mail. This will, of course, only include the methods for which the signature is given in the assignment sheet, not the methods that you design yourself.</span><br>
+<span>The final grading will partly be based on the automated testing system, so make sure you use the opportunity to automatically test your code. However, you will still need to test your code on your own!</span></p><h3 id="File-test_classesipynb" data-id="File-test_classesipynb" style=""><a class="anchor hidden-xs" href="#File-test_classesipynb" title="File-test_classesipynb"><span class="octicon octicon-link"></span></a><span>File </span><code>test_classes.ipynb</code></h3><p><span>You can download this notebook from the TeachCenter and run the cells to test whether your code works as intended. Note that not all functionality of the system is tested in the provided code, and you still have to do additional testing yourself.</span></p><hr><h1 id="Part-1-Warm-Up-Task-Banking-System-6-Points" data-id="Part-1-Warm-Up-Task-Banking-System-6-Points" style=""><a class="anchor hidden-xs" href="#Part-1-Warm-Up-Task-Banking-System-6-Points" title="Part-1-Warm-Up-Task-Banking-System-6-Points"><span class="octicon octicon-link"></span></a><span>Part 1: Warm-Up Task: Banking System (6 Points)</span></h1><p><span>The first part of this assignment is a simple task to get you started. You will create a banking system that consists of three classes: </span><code>User</code><span>, </span><code>BankAccount</code><span>, and </span><code>BankingSystem</code><span>. Implement these three classes according to the description below, </span><strong><span>and make sure to test them</span></strong><span>. At the end of this document, you can find a checklist containing all the classes and methods that you have to implement.</span></p><h3 id="Dataclass-User-1P" data-id="Dataclass-User-1P" style=""><a class="anchor hidden-xs" href="#Dataclass-User-1P" title="Dataclass-User-1P"><span class="octicon octicon-link"></span></a><span>Dataclass </span><code>User</code><span> (1P)</span></h3><p><span>The dataclass </span><code>User</code><span> represents a user of the bank. A user has a first name, a last name, an address, and a phone number. In this simple banking system, a user can never change his or her name, address, or phone number, so use the decorator </span><code>@dataclass</code><span> with the parameter </span><code>frozen = True</code><span>.</span></p><h4 id="Required-Properties" data-id="Required-Properties"><a class="anchor hidden-xs" href="#Required-Properties" title="Required-Properties"><span class="octicon octicon-link"></span></a><span>Required Properties:</span></h4><table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>first_name</code></td>
+<td><code>str</code></td>
+<td><span>The first name of the user.</span></td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td><code>str</code></td>
+<td><span>The last name of the user.</span></td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td><code>str</code></td>
+<td><span>The address of the user.</span></td>
+</tr>
+<tr>
+<td><code>phone_number</code></td>
+<td><code>str</code></td>
+<td><span>The phone number of the user.</span></td>
+</tr>
+</tbody>
+</table><h3 id="Class-BankAccount-2P" data-id="Class-BankAccount-2P" style=""><a class="anchor hidden-xs" href="#Class-BankAccount-2P" title="Class-BankAccount-2P"><span class="octicon octicon-link"></span></a><span>Class </span><code>BankAccount</code><span> (2P)</span></h3><p><span>The class </span><code>BankAccount</code><span> represents one bank account in the banking system. A </span><code>BankAccount</code><span> has a </span><code>User</code><span>, a balance, an IBAN, and a BIC.</span></p><h4 id="Required-Properties1" data-id="Required-Properties"><a class="anchor hidden-xs" href="#Required-Properties1" title="Required-Properties1"><span class="octicon octicon-link"></span></a><span>Required Properties:</span></h4><table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Getter</span></th>
+<th><span>Setter</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><code>User</code></td>
+<td><span>yes</span></td>
+<td><span>no</span></td>
+<td><span>The User of the bank account.</span></td>
+</tr>
+<tr>
+<td><code>balance</code></td>
+<td><code>float</code></td>
+<td><span>yes</span></td>
+<td><span>no</span></td>
+<td><span>The balance of the bank account. The initial balance should be </span><code>0</code><span>.</span></td>
+</tr>
+<tr>
+<td><code>iban</code></td>
+<td><code>str</code></td>
+<td><span>yes</span></td>
+<td><span>no</span></td>
+<td><span>The IBAN of the bank account.</span></td>
+</tr>
+<tr>
+<td><code>bic</code></td>
+<td><code>str</code></td>
+<td><span>yes</span></td>
+<td><span>no</span></td>
+<td><span>The BIC of the bank account.</span></td>
+</tr>
+</tbody>
+</table><h4 id="Required-Method-__init__" data-id="Required-Method-__init__"><a class="anchor hidden-xs" href="#Required-Method-__init__" title="Required-Method-__init__"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>__init__</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>The </span><code>__init__</code><span> creates a </span><code>BankAccount</code><span> object.</span></p>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><code>User</code></td>
+<td><span>A user object created with the </span><code>User</code><span> class.</span></td>
+</tr>
+<tr>
+<td><code>iban</code></td>
+<td><code>str</code></td>
+<td><span>The IBAN for the bank account.</span></td>
+</tr>
+<tr>
+<td><code>bic</code></td>
+<td><code>str</code></td>
+<td><span>The BIC for the bank account.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-add_money" data-id="Required-Method-add_money"><a class="anchor hidden-xs" href="#Required-Method-add_money" title="Required-Method-add_money"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>add_money</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method should add money to the bank accounts </span><code>balance</code><span>.</span></p>
+</li>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>amount</code></td>
+<td><code>float</code></td>
+<td><span>The amount of money that should be added to the balance.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-retrieve_money" data-id="Required-Method-retrieve_money"><a class="anchor hidden-xs" href="#Required-Method-retrieve_money" title="Required-Method-retrieve_money"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>retrieve_money</code></h4><ul>
+<li><span>Functionality:</span><br>
+<span>This method should retrieve money from the bank account’s </span><code>balance</code><span> if possible. If there is not enough money on the bank account (i.e. the </span><code>balance</code><span> would be negative after the transaction), the user should be informed by printing </span><code>&lt;first_name&gt; &lt;last_name&gt; has insufficient balance. Current balance: &lt;balance&gt;, &lt;amount - balance&gt; needed</code><br>
+<span>where every money-related value is formatted to 2 decimal places.</span><br>
+<span>For example, if a </span><code>user</code><span> called “Max Mustermann” with a </span><code>balance</code><span> of </span><code>15.0</code><span> wants to retrieve an </span><code>amount</code><span> of </span><code>20.0</code><span>, the resulting output should be</span><br>
+<code>Max Mustermann has insufficient balance. Current balance: 15.00, 5.00 needed</code></li>
+</ul><p><span>Make sure that the output is exactly as shown above! The method should return the success status.</span></p><ul>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>amount</code></td>
+<td><code>float</code></td>
+<td><span>The amount of money that should be added to the balance.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td><code>True</code><span> if there was enough money on the bank and the money was retrived, otherwise </span><code>False</code><span>.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-__str__" data-id="Required-Method-__str__"><a class="anchor hidden-xs" href="#Required-Method-__str__" title="Required-Method-__str__"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>__str__</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method returns a </span><em><span>string</span></em><span> in the format:</span></p>
+<pre><code>First Name: &lt;first_name&gt;
+Last Name: &lt;last_name&gt;
+Address: &lt;address&gt;
+Phone Number: &lt;phone_number&gt;
+Balance: &lt;balance&gt;
+IBAN: &lt;iban&gt;
+BIC: &lt;bic&gt;
+</code></pre>
+<p><span>For example, printing a </span><code>BankAccount</code><span> object could show:</span></p>
+<pre><code>First Name: Richard
+Last Name: Richboy
+Address: Moneystreet 4
+Phone Number: +431234567890
+Balance: 999999999.00
+IBAN: AT562081500000000001
+BIC: STSPAT2GXXX
+</code></pre>
+<p><span>Format the value of the balance to 2 decimal places. Make sure that the return is exactly the same as shown above!</span></p>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td><span>The created string containing the bank account information.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h3 id="Class-BankingSystem-3P" data-id="Class-BankingSystem-3P" style=""><a class="anchor hidden-xs" href="#Class-BankingSystem-3P" title="Class-BankingSystem-3P"><span class="octicon octicon-link"></span></a><span>Class </span><code>BankingSystem</code><span> (3P)</span></h3><p><span>An instance of the class </span><code>BankingSystem</code><span> represents a bank. A </span><code>BankingSystem</code><span> handles bank accounts and provides functionality for creating and removing accounts, as well as for adding, retrieving, and transferring money (by calling the respective methods of the affected bank account/s). Furthermore, it can display the information of a bank account by calling the </span><code>__str__</code><span> method of that account.</span></p><h4 id="Required-non-public-attributes" data-id="Required-non-public-attributes"><a class="anchor hidden-xs" href="#Required-non-public-attributes" title="Required-non-public-attributes"><span class="octicon octicon-link"></span></a><span>Required </span><strong><span>non-public</span></strong><span> attributes:</span></h4><table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_accounts</code></td>
+<td><code>dict[User, BankAccount]</code></td>
+<td><span>Dictionary with users as keys and bank accounts as values, initialized as an empty dict.</span></td>
+</tr>
+<tr>
+<td><code>_account_id</code></td>
+<td><code>int</code></td>
+<td><span>The internal account ID, initialized with </span><code>0</code><span>.</span></td>
+</tr>
+<tr>
+<td><code>_bic</code></td>
+<td><code>str</code></td>
+<td><span>BIC code of the Bank.</span></td>
+</tr>
+<tr>
+<td><code>_country</code></td>
+<td><code>str</code></td>
+<td><span>The country as ISO Alpha-2 code.</span></td>
+</tr>
+<tr>
+<td><code>_bank_code</code></td>
+<td><code>str</code></td>
+<td><span>The bank-specific code.</span></td>
+</tr>
+</tbody>
+</table><p><span>These attributes have neither a getter nor a setter!</span></p><h4 id="Required-Method-__init__1" data-id="Required-Method-__init__"><a class="anchor hidden-xs" href="#Required-Method-__init__1" title="Required-Method-__init__1"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>__init__</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>The </span><code>__init__</code><span> creates a </span><code>BankingSystem</code><span> object.</span></p>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bic</code></td>
+<td><code>str</code></td>
+<td><span>The BIC for the bank account.</span></td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>str</code></td>
+<td><span>The country as ISO Alpha-2 code. This is needed for the creation of the IBAN.</span></td>
+</tr>
+<tr>
+<td><code>bank_code</code></td>
+<td><code>str</code></td>
+<td><span>The bank-specific code (each bank has a specific code).</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-non-public-Method-_checksum" data-id="Required-non-public-Method-_checksum"><a class="anchor hidden-xs" href="#Required-non-public-Method-_checksum" title="Required-non-public-Method-_checksum"><span class="octicon octicon-link"></span></a><span>Required </span><strong><span>non-public</span></strong><span> Method: </span><code>_checksum</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method calculates the checksum for an user account. Each IBAN contains a checksum, which is derived from the account number, the country code and the bank code. The calculation works as follows:</span></p>
+<ol>
+<li><span>The country ISO Alpha-2 code has to be converted to a number. Each letter in the alphabet has a corresponding number. The counting starts at 10. This means A = 10, B = 11, C = 12, … Z = 35. For example, AT equals 1029, DE equals 1314.</span><br>
+<em><span>Hint: In Python, you can convert a letter to its unicode number. This can be done with </span><code>ord(&lt;letter&gt;)</code><span>, eg: </span><code>ord("A")</code><span> would give 65, </span><code>ord("B")</code><span> would give 66</span></em><span>.</span></li>
+<li><span>Then, two 0s are added to the country’s number representation. For Austria, this would be 102900, and for Germany 131400.</span></li>
+<li><span>Now, we can calculate a checknumber. This is done by concatenating the bank code, the account number, and the country’s number representation. For example, an Austrian bank code of 20815, an account number of 00042347891, and AT as country would result in the following number: 2081500042347891102900.</span></li>
+<li><span>The checksum is now calculated by the following formula: 98 - (checknumber modulo 97). </span><em><span>Hint: modulo in Python is done with the </span><code>%</code><span> operator</span></em><span>.</span><br>
+<span>For example, this would be: 98 - (2081500012347891102900 modulo 97) = 55. Thus, the checksum of this account would be 55.</span></li>
+<li><span>Ultimately, convert the checksum to a string. Since a checksum can result in a digit smaller than 10, you need to zero-pad this value to 2 digits. For example, a </span><code>checksum</code><span> of </span><code>2</code><span> would result in </span><code>'02'</code><span>.</span><br>
+<em><span>Hint: you can use format strings to do this: </span><code>f"{checksum:02}"</code><span> would pad the checksum with zeroes to 2 digits.</span></em></li>
+</ol>
+</li>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_number</code></td>
+<td><code>str</code></td>
+<td><span>The user-specific account number.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td><span>The checksum as a string.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-create_user_account" data-id="Required-Method-create_user_account"><a class="anchor hidden-xs" href="#Required-Method-create_user_account" title="Required-Method-create_user_account"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>create_user_account</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method should create a new user account and add the user to </span><code>_accounts</code><span>. First, check if the user already has an account. If that is the case, raise a ValueError with the following message: </span><code>"An account with this user already exists"</code><span>. Else, increase the initial account number (</span><code>_account_id</code><span>) by 1. Calculate the checksum with the </span><code>_checksum</code><span> method. Now create the IBAN as follows: </span><code>&lt;Alpha-2 country code&gt; + &lt;checksum&gt; + &lt;bank_code&gt; + &lt;account_number&gt;</code><span>.</span><br>
+<span>The </span><code>account_number</code><span> mentioned above is the value of the </span><code>_account_id</code><span> zero-padded to 11 digits. For example, an </span><code>_account_id</code><span> of </span><code>1</code><span> would result in </span><code>'00000000001'</code><span>.</span><br>
+<em><span>Hint: you can use format strings to do this: </span><code>f"{_account_id:011}"</code><span> would pad </span><code>_account_id</code><span> with zeroes to 11 digits.</span></em><br>
+<span>For an account with the same values as in the example of the checksum method the IBAN would be </span><code>AT552081500042347891</code><span>. Now create a new </span><code>BankAccount</code><span> instance and add it to the </span><code>_accounts</code><span> dictionary with the user.</span></p>
+</li>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><code>User</code></td>
+<td><span>User for whom an account should be created</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-add_money1" data-id="Required-Method-add_money"><a class="anchor hidden-xs" href="#Required-Method-add_money1" title="Required-Method-add_money1"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>add_money</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method should add money to the account given by the user. First, check if the user already has an account, if not, raise a ValueError with the following message: </span><code>"This account does not exist"</code><span>. Use the </span><code>add_money</code><span> method from the </span><code>BankAccount</code><span> instance.</span><br>
+<em><span>Hint: You can create your own non public method which checks if an user already has an account since you will need this functionality more than once.</span></em></p>
+</li>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><code>User</code></td>
+<td><span>User for whom money is to be added.</span></td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td><code>float</code></td>
+<td><span>Amount of money to add.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-retrieve_money1" data-id="Required-Method-retrieve_money"><a class="anchor hidden-xs" href="#Required-Method-retrieve_money1" title="Required-Method-retrieve_money1"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>retrieve_money</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method should retrieve money to the account given by the user. First, check if the user already has an account, if not, raise a ValueError with the following message: </span><code>"This account does not exist"</code><span>. Use the </span><code>retrieve_money</code><span> method from the </span><code>BankAccount</code><span> instance.</span></p>
+</li>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><code>User</code></td>
+<td><span>User for whom money is to be retrieved.</span></td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td><code>float</code></td>
+<td><span>Amount of money to retrieve.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-transfer_money" data-id="Required-Method-transfer_money"><a class="anchor hidden-xs" href="#Required-Method-transfer_money" title="Required-Method-transfer_money"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>transfer_money</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method should transfer money from one account to another account. First, check if both users have an account, if not, raise a ValueError with the following message: </span><code>"This account does not exist"</code><span>. Use the </span><code>retrieve_money</code><span> and </span><code>add_money</code><span> method from the </span><code>BankAccount</code><span> instance.</span></p>
+</li>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>amount</code></td>
+<td><code>float</code></td>
+<td><span>Amount of money to retrieve.</span></td>
+</tr>
+<tr>
+<td><code>retrieving_user</code></td>
+<td><code>User</code></td>
+<td><span>User for whom money is to be retrieved.</span></td>
+</tr>
+<tr>
+<td><code>receiving_user</code></td>
+<td><code>User</code></td>
+<td><span>User for whom money should be added.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-account_info" data-id="Required-Method-account_info"><a class="anchor hidden-xs" href="#Required-Method-account_info" title="Required-Method-account_info"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>account_info</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method should </span><em><span>output</span></em><span> the information from the users bank account. First, check if the user has already an account, if not, raise a ValueError with the following message: </span><code>"This account does not exist"</code><span>.</span><br>
+<em><span>Hint: use the </span><code>__str__</code><span> method from </span><code>BankAccount</code></em><span>.</span></p>
+</li>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><code>User</code></td>
+<td><span>User for whom information should be printed.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-remove_account" data-id="Required-Method-remove_account"><a class="anchor hidden-xs" href="#Required-Method-remove_account" title="Required-Method-remove_account"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>remove_account</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method should delete the account given by the user. First, check if the user already has an account, if not, raise a ValueError with the following message: </span><code>"This account does not exist"</code><span>.</span></p>
+</li>
+<li>
+<p><span>Positional arguments:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><code>User</code></td>
+<td><span>User for whom the account should be deleted.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><hr><h1 id="Part-2-Dataset-Exploration-System-14-Points" data-id="Part-2-Dataset-Exploration-System-14-Points" style=""><a class="anchor hidden-xs" href="#Part-2-Dataset-Exploration-System-14-Points" title="Part-2-Dataset-Exploration-System-14-Points"><span class="octicon octicon-link"></span></a><span>Part 2: Dataset Exploration System (14 Points)</span></h1><h2 id="Datasets" data-id="Datasets" style=""><a class="anchor hidden-xs" href="#Datasets" title="Datasets"><span class="octicon octicon-link"></span></a><span>Datasets</span></h2><p><span>In the second part of this assignment, we will work with real-life data. You can choose between the two datasets described in this section. You can also choose to work with both datasets - in this case, you will receive bonus points (see Section </span><a href="#Bonus-Points-(4P)"><span>Bonus Points</span></a><span> below).</span><br>
+<strong><span>Hint:</span></strong><span> If you design your system well, working with both datasets will be very little extra work compared to working with only one.</span></p><h3 id="Heart-Disease-Dataset" data-id="Heart-Disease-Dataset" style=""><a class="anchor hidden-xs" href="#Heart-Disease-Dataset" title="Heart-Disease-Dataset"><span class="octicon octicon-link"></span></a><span>Heart Disease Dataset</span></h3><p><span>This dataset contains data on heart disease diagnosis. It contains 15 columns, including one column (the column </span><code>target</code><span>) that indicates the presence (or absence) of heart disease in the patient. Missing values in this dataset are specified with </span><code>?</code><span> in the data files.</span></p><p><span>This dataset was created by the following institutions and principal investigators:</span></p><ol>
+<li><span>Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.</span></li>
+<li><span>University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.</span></li>
+<li><span>University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.</span></li>
+<li><span>V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D., Ph.D.</span></li>
+</ol><p><span>For more information on this dataset, see </span><a href="https://archive.ics.uci.edu/ml/datasets/heart+disease" target="_blank" rel="noopener"><span>https://archive.ics.uci.edu/ml/datasets/heart+disease</span></a><span>.</span></p><h3 id="Parkinson-Speech-Dataset" data-id="Parkinson-Speech-Dataset" style=""><a class="anchor hidden-xs" href="#Parkinson-Speech-Dataset" title="Parkinson-Speech-Dataset"><span class="octicon octicon-link"></span></a><span>Parkinson Speech Dataset</span></h3><p><span>This dataset was created by Sakar et al. [1] and contains data from speech recordings of subjects with Parkinson’s disease as well as healthy subjects. It contains 31 columns, including one column (the column </span><code>class</code><span>) that indicates the presence (or absence) of Parkinson’s disease and columns containing time-frequency-based features extracted from voice samples. Missing values in this dataset are specified with </span><code>n/a</code><span> in the data files.</span></p><p><span>For more information on this dataset, see Sakar et al. [1] and</span><br>
+<a href="https://archive.ics.uci.edu/ml/datasets/Parkinson+Speech+Dataset+with++Multiple+Types+of+Sound+Recordings" target="_blank" rel="noopener"><span>https://archive.ics.uci.edu/ml/datasets/Parkinson+Speech+Dataset+with++Multiple+Types+of+Sound+Recordings</span></a><span>.</span></p><h3 id="Dataset-Sources" data-id="Dataset-Sources" style=""><a class="anchor hidden-xs" href="#Dataset-Sources" title="Dataset-Sources"><span class="octicon octicon-link"></span></a><span>Dataset Sources</span></h3><p><span>Both datasets have been made available in the UCI Machine Learning Repository [2].</span></p><p><span>[1] Sakar, B. E., et al. (2013). Collection and analysis of a Parkinson speech dataset with multiple types of sound recordings. IEEE Journal of Biomedical and Health Informatics, 17(4), 828-834.</span><br>
+<span>[2] Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [</span><a href="http://archive.ics.uci.edu/ml" target="_blank" rel="noopener"><span>http://archive.ics.uci.edu/ml</span></a><span>]. Irvine, CA: University of California, School of Information and Computer Science.</span></p><hr><h2 id="General-Functionality-of-the-System" data-id="General-Functionality-of-the-System" style=""><a class="anchor hidden-xs" href="#General-Functionality-of-the-System" title="General-Functionality-of-the-System"><span class="octicon octicon-link"></span></a><span>General Functionality of the System</span></h2><h3 id="Input-Files" data-id="Input-Files" style=""><a class="anchor hidden-xs" href="#Input-Files" title="Input-Files"><span class="octicon octicon-link"></span></a><span>Input Files</span></h3><p><span>All input files that you need for this assignment are provided in the “Assignment 1” Section in the TeachCenter.</span></p><h4 id="Data-Files" data-id="Data-Files"><a class="anchor hidden-xs" href="#Data-Files" title="Data-Files"><span class="octicon octicon-link"></span></a><span>Data Files</span></h4><p><span>The data for a dataset is contained in several </span><code>.csv</code><span> files. These </span><code>.csv</code><span> files have no column headers; the column names can be found in an extra </span><code>.json</code><span> file (in the same directory as the </span><code>.csv</code><span> files), along with a description of each column.</span></p><h4 id="Config-File" data-id="Config-File"><a class="anchor hidden-xs" href="#Config-File" title="Config-File"><span class="octicon octicon-link"></span></a><span>Config File</span></h4><p><span>For each dataset, we have provided a </span><code>.json</code><span> template for a config file. The config file contains information about how the different data columns should be plotted by the system (for more information, see Section </span><a href="#Plotter-Classes-(4.5P)"><span>“Plotter Classes”</span></a><span>. Furthermore, the config file contains information on the dataset that will be used by the constructor of the class </span><code>Dataset</code><span> (for more information, see Section </span><a href="#Provided-Code"><span>“Provided Code”</span></a><span>).</span><br>
+<span>For example, the provided template for the Heart Disease Dataset looks like this:</span></p><pre><code class="json hljs"><span class="token punctuation">{</span>
+    <span class="token property">"plot_types"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"age"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"sex"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"cp"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"trestbps"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"chol"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"fbs"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"restecg"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"thalach"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"exang"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"oldpeak"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"slope"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"ca"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"thal"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">""</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"target_feature"</span><span class="token operator">:</span> <span class="token string">"target"</span><span class="token punctuation">,</span>
+    <span class="token property">"column_info_file"</span><span class="token operator">:</span> <span class="token string">"column_info_heart_disease.json"</span><span class="token punctuation">,</span>
+    <span class="token property">"data_folder"</span><span class="token operator">:</span> <span class="token string">"heart_disease_data"</span><span class="token punctuation">,</span>
+    <span class="token property">"dataset_name"</span><span class="token operator">:</span> <span class="token string">"Heart Disease Dataset"</span><span class="token punctuation">,</span>
+    <span class="token property">"na_characters"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"?"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"binarize_threshold"</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre><p><span>It is up to you to decide which data column should be plotted with which plot type. In your system, the following plot types should be available: </span><code>box</code><span>, </span><code>bar</code><span>, and </span><code>histogram</code><span>. When you have decided which plot type to use for each data column, fill in the empty strings in the config file (e.g., </span><code>"age": "box"</code><span>).</span></p><h3 id="Loading-Data" data-id="Loading-Data" style=""><a class="anchor hidden-xs" href="#Loading-Data" title="Loading-Data"><span class="octicon octicon-link"></span></a><span>Loading Data</span></h3><p><span>In the data folder specified in the configuration file, there are several </span><code>.csv</code><span> files that contain the data for the respective dataset. The </span><code>Dataset</code><span> class (see Section </span><a href="#Provided-Code"><span>“Provided Code”</span></a><span>) is responsible for loading, combining, and storing the data contained in these files.</span></p><h3 id="Plotting-and-Calculating-Metrics" data-id="Plotting-and-Calculating-Metrics" style=""><a class="anchor hidden-xs" href="#Plotting-and-Calculating-Metrics" title="Plotting-and-Calculating-Metrics"><span class="octicon octicon-link"></span></a><span>Plotting and Calculating Metrics</span></h3><p><span>After a suitable data structure has been found, the next step is to take a closer look at the data. Arbitrary features will be plotted and simple metrics will be calculated to gain further insight into the data.</span><br>
+<span>Note that in this assignment, the word “feature” simply means a column in the dataset.</span></p><hr><h2 id="Provided-Code" data-id="Provided-Code" style=""><a class="anchor hidden-xs" href="#Provided-Code" title="Provided-Code"><span class="octicon octicon-link"></span></a><span>Provided Code</span></h2><p><span>The code for one of the classes that you need for the system, the class </span><code>Dataset</code><span>, is already provided for you in the file </span><code>dataset.py</code><span> (downloadable from the TeachCenter). This section provides you with a description of the functionality of the class </span><code>Dataset</code><span>.</span></p><h3 id="Class-Dataset" data-id="Class-Dataset" style=""><a class="anchor hidden-xs" href="#Class-Dataset" title="Class-Dataset"><span class="octicon octicon-link"></span></a><span>Class </span><code>Dataset</code></h3><p><span>The class </span><code>Dataset</code><span> represents a dataset. It holds the data along with a description of the data. It provides functionality for loading data files, writing data to a file, and other dataset-related functionality. </span><em><span>Do not change anything in this class!</span></em></p><h4 id="Properties" data-id="Properties"><a class="anchor hidden-xs" href="#Properties" title="Properties"><span class="octicon octicon-link"></span></a><span>Properties</span></h4><table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Getter</span></th>
+<th><span>Setter</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td><span>yes</span></td>
+<td><span>yes</span></td>
+<td><span>The name of the dataset</span></td>
+</tr>
+<tr>
+<td><code>column_info</code></td>
+<td><code>dict[str, str]</code></td>
+<td><span>yes</span></td>
+<td><span>no</span></td>
+<td><span>Dictionary with the column names as keys and the column descriptions as values (this information is available in the </span><code>.json</code><span>-file specified under </span><code>"column_info_file"</code><span> in the configuration dictionary)</span></td>
+</tr>
+<tr>
+<td><code>feature_names</code></td>
+<td><code>list[str]</code></td>
+<td><span>yes</span></td>
+<td><span>no</span></td>
+<td><span>List of feature names</span></td>
+</tr>
+<tr>
+<td><code>target_feature_name</code></td>
+<td><code>str</code></td>
+<td><span>yes</span></td>
+<td><span>no</span></td>
+<td><span>The name of the target feature</span></td>
+</tr>
+</tbody>
+</table><h4 id="Method-__init__" data-id="Method-__init__"><a class="anchor hidden-xs" href="#Method-__init__" title="Method-__init__"><span class="octicon octicon-link"></span></a><span>Method: </span><code>__init__</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<code>__init__</code><span> receives a dictionary containing information about a dataset (obtained from a </span><code>.json</code><span> config file, see Section </span><a href="#Config-File"><span>Config File</span></a><span>). The requested dataset is read (and stored) during object initialization. The target feature is binarized, if </span><code>"binarize_threshold"</code><span> is set in the configuration. The configuration dictionary contains the following entries:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"dataset_name"</code></td>
+<td><code>str</code></td>
+<td><span>The name of the dataset</span></td>
+</tr>
+<tr>
+<td><code>"column_info_file"</code></td>
+<td><code>str</code></td>
+<td><span>The path to the </span><code>.json</code><span>-file containing information on the different columns in the data files</span></td>
+</tr>
+<tr>
+<td><code>"data_folder"</code></td>
+<td><code>str</code></td>
+<td><span>The path to the folder containing </span><code>.csv</code><span>-files to read</span></td>
+</tr>
+<tr>
+<td><code>"target_feature"</code></td>
+<td><code>str</code></td>
+<td><span>The name of the target feature</span></td>
+</tr>
+<tr>
+<td><code>"na_characters"</code></td>
+<td><code>list[str]</code></td>
+<td><span>Which characters in data files should be treated as </span><code>NaN</code></td>
+</tr>
+<tr>
+<td><code>"binarize_threshold"</code></td>
+<td><code>int</code></td>
+<td><span>[Optional] If specified, all target labels less than </span><code>"binarize threshold"</code><span> are set to </span><code>0</code><span>, all labels equal or greater are set to </span><code>1</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config_info_dict</code></td>
+<td><code>dict</code></td>
+<td><span>A dictionary containing all relevant infos to instantiate a </span><code>Dataset</code><span> object</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Method-__str__" data-id="Method-__str__"><a class="anchor hidden-xs" href="#Method-__str__" title="Method-__str__"><span class="octicon octicon-link"></span></a><span>Method: </span><code>__str__</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method returns a string in the format</span></p>
+<pre><code>"Dataset Info:\n\tDataset name: &lt;name of the dataset&gt;\n\tNumber of features: &lt;number of columns&gt;, number of rows: &lt;number of rows&gt;"
+</code></pre>
+<p><span>where </span><code>&lt;name of the dataset&gt;</code><span> is the name of the dataset that was defined in the configuration, </span><code>&lt;number of columns&gt;</code><span> is the number of columns in the data, and </span><code>&lt;number of rows&gt;</code><span> is the number of rows in the data.</span></p>
+<p><span>So, printing a </span><code>Dataset</code><span> object could show:</span></p>
+<pre><code>Dataset Info:
+    Dataset name: Test Dataset
+    Number of features: 4, number of rows: 10
+</code></pre>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td><span>See description above</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Method-write_data_to_file" data-id="Method-write_data_to_file"><a class="anchor hidden-xs" href="#Method-write_data_to_file" title="Method-write_data_to_file"><span class="octicon octicon-link"></span></a><span>Method: </span><code>write_data_to_file</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method writes the data to a .csv file (only the data, not the column headers/names). The column order is equal to the column order of the original files.</span></p>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>output_file</code></td>
+<td><code>str</code></td>
+<td><span>The name of the output file</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Method-get_feature_values" data-id="Method-get_feature_values"><a class="anchor hidden-xs" href="#Method-get_feature_values" title="Method-get_feature_values"><span class="octicon octicon-link"></span></a><span>Method: </span><code>get_feature_values</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method returns the values from the requested feature(s).</span><br>
+<span>If a single feature name was passed, a single list - containing the values from that feature - is returned. If multiple feature names are passed, multiple lists are returned as a list of lists. Depending on the parameter </span><code>remove_missing</code><span>, rows with missing values are included or omitted (for details, see parameter description below).</span></p>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Default Value</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*feature_names</code></td>
+<td><code>str</code></td>
+<td></td>
+<td><span>Arbitrary many feature names as strings</span></td>
+</tr>
+<tr>
+<td><code>remove_missing</code></td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+<td><span>If </span><code>True</code><span>, remove values for each row where at least one of the features in </span><code>feature_names</code><span> has a missing value. If </span><code>False</code><span>, return all values, including missing values.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list</code><span> / </span><code>list[list]</code></td>
+<td><span>A list of feature values if only one feature was specified in </span><code>feature_names</code><span>. A list of lists (each list contains the values for one feature) if more than one feature was specified in </span><code>feature_names</code><span>. The order of the lists should be the same as in </span><code>feature_names</code><span>.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Method-get_target_values" data-id="Method-get_target_values"><a class="anchor hidden-xs" href="#Method-get_target_values" title="Method-get_target_values"><span class="octicon octicon-link"></span></a><span>Method: </span><code>get_target_values</code></h4><ul>
+<li><span>Functionality:</span><br>
+<span>This method returns the values from all rows of the target column as a list.</span></li>
+</ul><ul>
+<li><span>Return:</span>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list</code></td>
+<td><span>A list containing the target values.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><hr><h2 id="Description-of-the-Required-Classes" data-id="Description-of-the-Required-Classes" style=""><a class="anchor hidden-xs" href="#Description-of-the-Required-Classes" title="Description-of-the-Required-Classes"><span class="octicon octicon-link"></span></a><span>Description of the Required Classes</span></h2><p><span>This section describes the other classes that are required for the dataset exploration system. </span><strong><span>These classes have to be implemented by you.</span></strong><span> Furthermore, for each required class, the required properties and methods are described. You have to implement these required properties and methods, but you are free to (and, depending on your design, might need to) implement additional ones. At the end of this document, you can find a checklist containing all the classes and methods that you have to implement.</span></p><h3 id="Class-ConfigReader-1P" data-id="Class-ConfigReader-1P" style=""><a class="anchor hidden-xs" href="#Class-ConfigReader-1P" title="Class-ConfigReader-1P"><span class="octicon octicon-link"></span></a><span>Class </span><code>ConfigReader</code><span> (1P)</span></h3><p><span>This class provides functionality for reading the plotting configuration file.</span></p><h4 id="Required-Static-Method-read_json_config" data-id="Required-Static-Method-read_json_config"><a class="anchor hidden-xs" href="#Required-Static-Method-read_json_config" title="Required-Static-Method-read_json_config"><span class="octicon octicon-link"></span></a><span>Required Static Method: </span><code>read_json_config</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This is a static method. It reads the config file (specified in the argument </span><code>config_file</code><span>) and returns the content as a dictionary.</span></p>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config_file</code></td>
+<td><code>str</code></td>
+<td><span>The name of the config file</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Dict[str, Any]</code></td>
+<td><span>A dictionary containing the information from the config file.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h3 id="Abstract-Class-Plotter-2P" data-id="Abstract-Class-Plotter-2P" style=""><a class="anchor hidden-xs" href="#Abstract-Class-Plotter-2P" title="Abstract-Class-Plotter-2P"><span class="octicon octicon-link"></span></a><span>Abstract Class </span><code>Plotter</code><span> (2P)</span></h3><p><span>The class </span><code>Plotter</code><span> is an abstract class that defines the interface for any concrete plotters.</span></p><h4 id="Required-Class-Method-get_plotter_classes" data-id="Required-Class-Method-get_plotter_classes"><a class="anchor hidden-xs" href="#Required-Class-Method-get_plotter_classes" title="Required-Class-Method-get_plotter_classes"><span class="octicon octicon-link"></span></a><span>Required Class Method: </span><code>get_plotter_classes</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This class method returns a dictionary that contains information about all subclasses of </span><code>Plotter</code><span>.</span></p>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dict[str,type]</code></td>
+<td><span>A dictionary where each key is a plotter name and its value is the type of the corresponding plotter class. E.g., one dictionary entry will be</span><code>'bar': &lt;class 'plotter.BarPlotter'&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Static-Abstract-Method-plot_feature" data-id="Required-Static-Abstract-Method-plot_feature"><a class="anchor hidden-xs" href="#Required-Static-Abstract-Method-plot_feature" title="Required-Static-Abstract-Method-plot_feature"><span class="octicon octicon-link"></span></a><span>Required Static Abstract Method: </span><code>plot_feature</code></h4><ul>
+<li><span>Parameters:</span>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feature_name</code></td>
+<td><code>str</code></td>
+<td><span>The name of the feature to plot</span></td>
+</tr>
+<tr>
+<td><code>feature_values</code></td>
+<td><code>list</code></td>
+<td><span>The values of the feature specified by </span><code>feature_name</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><p><span>Hint: A </span><code>static abstract method</code><span> is a method of a class that is both a </span><code>staticmethod</code><span> and an </span><code>abstractmethod</code><span>. You will have to use both decorators in the right order.</span></p><h4 id="Required-Static-Abstract-Method-plot_feature_vs_target" data-id="Required-Static-Abstract-Method-plot_feature_vs_target"><a class="anchor hidden-xs" href="#Required-Static-Abstract-Method-plot_feature_vs_target" title="Required-Static-Abstract-Method-plot_feature_vs_target"><span class="octicon octicon-link"></span></a><span>Required Static Abstract Method: </span><code>plot_feature_vs_target</code></h4><ul>
+<li><span>Parameters:</span>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feature_name</code></td>
+<td><code>str</code></td>
+<td><span>The name of the feature to plot</span></td>
+</tr>
+<tr>
+<td><code>feature_values</code></td>
+<td><code>list</code></td>
+<td><span>The values of the feature specified by </span><code>feature_name</code></td>
+</tr>
+<tr>
+<td><code>target_name</code></td>
+<td><code>str</code></td>
+<td><span>The name of the target variable</span></td>
+</tr>
+<tr>
+<td><code>target_values</code></td>
+<td><code>list</code></td>
+<td><span>The values of the target variable</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h3 id="Plotter-Classes-6P" data-id="Plotter-Classes-6P" style=""><a class="anchor hidden-xs" href="#Plotter-Classes-6P" title="Plotter-Classes-6P"><span class="octicon octicon-link"></span></a><span>Plotter Classes (6P)</span></h3><p><span>The plotter classes are subclasses of the class </span><code>Plotter</code><span>. Write three plotter classes:</span></p><ol>
+<li><code>BarPlotter</code></li>
+<li><code>HistogramPlotter</code></li>
+<li><code>BoxPlotter</code></li>
+</ol><p><span>The </span><code>BarPlotter</code><span> can plot bar charts (where every bar represents how often a certain value of a feature occurs), the </span><code>HistogramPlotter</code><span> can plot histograms, and the </span><code>BoxPlotter</code><span> can plot box plots.</span></p><p><span>These classes implement the methods </span><code>plot_feature</code><span> and </span><code>plot_feature_vs_target</code><span>.</span></p><h4 id="Required-Static-Method-plot_feature" data-id="Required-Static-Method-plot_feature"><a class="anchor hidden-xs" href="#Required-Static-Method-plot_feature" title="Required-Static-Method-plot_feature"><span class="octicon octicon-link"></span></a><span>Required Static Method: </span><code>plot_feature</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method visualizes a single feature. It creates a plot of the feature values (depending on which plotter class the method is in, it will be either a bar chart, a histogram, or a box plot). Design the layout of the plots yourself.</span><br>
+<span>The arguments of this method are defined in the abstract </span><code>Plotter</code><span> class. The return value should be a figure-object containing the plot (use your preferred plotting library).</span></p>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matplotlib.figure.Figure</code><span> or</span><br><code>plotly.graph_objects.Figure</code><span> or</span><br></td>
+<td><span>A figure-object containing the plot</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Static-Method-plot_feature_vs_target" data-id="Required-Static-Method-plot_feature_vs_target"><a class="anchor hidden-xs" href="#Required-Static-Method-plot_feature_vs_target" title="Required-Static-Method-plot_feature_vs_target"><span class="octicon octicon-link"></span></a><span>Required Static Method: </span><code>plot_feature_vs_target</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method visualizes a feature in combination with the target variable. It creates a plot that shows the feature values separated according to the corresponding values of the target variable. Design the plots yourself: For example, the </span><code>BarPlotter</code><span> could create a grouped bar chart (grouped by the value of the target variable), or it could create several bar charts next to each other (one for each target value, i.e., two in the case of a binary target variable).</span><br>
+<span>The arguments of this method are defined in the abstract </span><code>Plotter</code><span> class. The return value should be a figure-object containing the plot (use your preferred plotting library).</span></p>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matplotlib.figure.Figure</code><span> or</span><br><code>plotly.graph_objects.Figure</code></td>
+<td><span>A figure-object containing the plot</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h3 id="Class-DatasetExplorer-5P" data-id="Class-DatasetExplorer-5P" style=""><a class="anchor hidden-xs" href="#Class-DatasetExplorer-5P" title="Class-DatasetExplorer-5P"><span class="octicon octicon-link"></span></a><span>Class </span><code>DatasetExplorer</code><span> (5P)</span></h3><p><span>The class </span><code>DatasetExplorer</code><span> contains methods for exploring the dataset, such as plotting features and calculating simple metrics.</span></p><h4 id="Required-Method-__init__2" data-id="Required-Method-__init__"><a class="anchor hidden-xs" href="#Required-Method-__init__2" title="Required-Method-__init__2"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>__init__</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>The </span><code>__init__</code><span> creates a </span><code>DatasetExplorer</code><span> object.</span></p>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td><code>Dataset</code></td>
+<td><span>A dataset object created with the </span><code>Dataset</code><span> class</span></td>
+</tr>
+<tr>
+<td><code>plot_types</code></td>
+<td><code>dict[str, str]</code></td>
+<td><span>A dictionary taken from the </span><code>config_file</code><span> of the respective dataset mapping each feature to a </span><code>Plotter</code><span> type. It could look like this:</span><br><span> </span><code>{"age": "box", "sex": "bar"}</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-__str__1" data-id="Required-Method-__str__"><a class="anchor hidden-xs" href="#Required-Method-__str__1" title="Required-Method-__str__1"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>__str__</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method returns a string in the format</span></p>
+<pre><code>"DatasetExplorer Info:\n\tDataset name: &lt;name of the dataset&gt;"
+</code></pre>
+<p><span>So, printing a </span><code>DatasetExplorer</code><span> object could show:</span></p>
+<pre><code>DatasetExplorer Info:
+    Dataset name: Test Dataset
+</code></pre>
+</li>
+</ul><ul>
+<li><span>Return:</span>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td><span>See description above</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-print_feature_names" data-id="Required-Method-print_feature_names"><a class="anchor hidden-xs" href="#Required-Method-print_feature_names" title="Required-Method-print_feature_names"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>print_feature_names</code></h4><ul>
+<li><span>Functionality:</span><br>
+<span>Prints the names of the features contained in the dataset seperated by a comma that is followed by a space (i.e. </span><code>", "</code><span>):</span><pre><code>Feature names:
+&lt;name of feature 1&gt;, &lt;name of feature 2, ... , &lt;name of feature N&gt;
+</code></pre>
+<span>For example, the output for a dataset containing two features, </span><em><span>age</span></em><span> and </span><em><span>sex</span></em><span>, looks like this:</span><pre><code>Feature names:
+age, sex
+</code></pre>
+</li>
+</ul><h4 id="Required-Method-print_feature_description" data-id="Required-Method-print_feature_description"><a class="anchor hidden-xs" href="#Required-Method-print_feature_description" title="Required-Method-print_feature_description"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>print_feature_description</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method either prints the description of one requested feature or the description of all features. The features’ descriptions are found in the </span><code>column_info.json</code><span> file of the respective dataset.</span></p>
+<p><span>In the case where the description of only one feature is requested, print:</span><br>
+<code>&lt;feature name&gt;: &lt;feature description&gt;</code></p>
+<p><span>Otherwise, print:</span></p>
+<pre><code>Features and descriptions:
+    &lt;feature 1 name&gt;: &lt;feature 1 description&gt;
+    &lt;feature 2 name&gt;: &lt;feature 2 description&gt;
+    ...
+    &lt;feature N name&gt;: &lt;feature N description&gt;
+</code></pre>
+<p><span>Again, with a dataset comprising two features, </span><em><span>age</span></em><span> and </span><em><span>sex</span></em><span>, the output of this method is as follows:</span></p>
+<pre><code>Features and descriptions:
+    age: age in years
+    sex: sex (1 = male; 0 = female)
+</code></pre>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Default Value</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feature_name</code></td>
+<td><code>NoneType</code><span>/</span><code>str</code></td>
+<td><code>None</code></td>
+<td><span>If </span><code>feature_name</code><span> is </span><code>None</code><span>, print the description for all the features contained in the dataset. If </span><code>feature_name</code><span> is set to a specific feature name, print the description for that feature only.</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-plot_feature" data-id="Required-Method-plot_feature"><a class="anchor hidden-xs" href="#Required-Method-plot_feature" title="Required-Method-plot_feature"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>plot_feature</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<code>plot_feature</code><span> delegates plotting to the appropriate </span><code>Plotter</code><span>’s </span><code>plot_feature</code><span> static method (using </span><code>plot_types</code><span>), creating appropriate arguments via calls to methods of the </span><code>Dataset</code><span> to explore.</span></p>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feature_name</code></td>
+<td><code>str</code></td>
+<td><span>The name of the feature to plot</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-plot_feature_vs_target" data-id="Required-Method-plot_feature_vs_target"><a class="anchor hidden-xs" href="#Required-Method-plot_feature_vs_target" title="Required-Method-plot_feature_vs_target"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>plot_feature_vs_target</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<code>plot_feature_vs_target</code><span> delegates plotting to the appropriate </span><code>Plotter</code><span>’s </span><code>plot_feature_vs_target</code><span> static method (using </span><code>plot_types</code><span>), creating appropriate arguments via calls to methods of the </span><code>Dataset</code><span> to explore.</span></p>
+</li>
+<li>
+<p><span>Parameters</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feature_name</code></td>
+<td><code>str</code></td>
+<td><span>The name of the feature to plot</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h4 id="Required-Method-calculate_correlation_between_features" data-id="Required-Method-calculate_correlation_between_features"><a class="anchor hidden-xs" href="#Required-Method-calculate_correlation_between_features" title="Required-Method-calculate_correlation_between_features"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>calculate_correlation_between_features</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>Calculate and return the correlation coefficient and p-value using one of the following methods (depending on the parameter </span><code>method</code><span>):</span></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient" target="_blank" rel="noopener"><span>pearson</span></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient" target="_blank" rel="noopener"><span>spearman</span></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient" target="_blank" rel="noopener"><span>kendalltau</span></a></li>
+</ul>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Default Value</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feature_name_1</code></td>
+<td><code>str</code></td>
+<td></td>
+<td><span>The name of the first feature</span></td>
+</tr>
+<tr>
+<td><code>feature_name_2</code></td>
+<td><code>str</code></td>
+<td></td>
+<td><span>The name of the second feature</span></td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>str</code></td>
+<td><code>"pearson"</code></td>
+<td><span>The method used to calculate the correlation between the two features (can be either </span><code>"pearson"</code><span>, </span><code>"spearman"</code><span> or </span><code>"kendalltau"</code><span>)</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><span>Return:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tuple</code></td>
+<td><span>The correlation coefficient r and the p-value as a tuple in the form of </span><code>(r, p)</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><p><span>Note that you are allowed to use </span><code>scipy</code><span>. Make sure that you properly handle the case in which one or more values of a feature are missing.</span></p><h4 id="Required-Method-print_quartiles_of_feature" data-id="Required-Method-print_quartiles_of_feature"><a class="anchor hidden-xs" href="#Required-Method-print_quartiles_of_feature" title="Required-Method-print_quartiles_of_feature"><span class="octicon octicon-link"></span></a><span>Required Method: </span><code>print_quartiles_of_feature</code></h4><ul>
+<li>
+<p><span>Functionality:</span><br>
+<span>This method prints the quartiles of the specified feature in the following format:</span></p>
+<pre><code>Quartiles:
+    Q1: &lt;first quartile&gt;
+    Q2: &lt;second quartile&gt;
+    Q3: &lt;third quartile&gt;
+</code></pre>
+<p><span>For example:</span></p>
+<pre><code>Quartiles:
+    Q1: 8.0
+    Q2: 15.0
+    Q3: 18.5
+</code></pre>
+</li>
+<li>
+<p><span>Parameters:</span></p>
+<table>
+<thead>
+<tr>
+<th><span>Name</span></th>
+<th><span>Type</span></th>
+<th><span>Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feature_name</code></td>
+<td><code>str</code></td>
+<td><span>The name of the feature for which the quartiles should be calculated and printed</span></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul><h2 id="Bonus-Points-3P" data-id="Bonus-Points-3P" style=""><a class="anchor hidden-xs" href="#Bonus-Points-3P" title="Bonus-Points-3P"><span class="octicon octicon-link"></span></a><span>Bonus Points (3P)</span></h2><h4 id="1-Use-both-datasets-15P" data-id="1-Use-both-datasets-15P"><a class="anchor hidden-xs" href="#1-Use-both-datasets-15P" title="1-Use-both-datasets-15P"><span class="octicon octicon-link"></span></a><span>1. Use both datasets (1.5P)</span></h4><p><span>You will get bonus points if you work with both datasets. This means that all cells in the “Dataset Exploration System” section of </span><code>test_classes.ipynb</code><span> should work with your implementation.</span></p><h4 id="2-Implement-the-calculation-of-the-correlations-yourself-15P" data-id="2-Implement-the-calculation-of-the-correlations-yourself-15P"><a class="anchor hidden-xs" href="#2-Implement-the-calculation-of-the-correlations-yourself-15P" title="2-Implement-the-calculation-of-the-correlations-yourself-15P"><span class="octicon octicon-link"></span></a><span>2. Implement the calculation of the correlations yourself (1.5P)</span></h4><p><span>Implement </span><code>DatasetExplorer</code><span>’s method </span><code>calculate_correlation_between_features</code><span> using no 3rd-party package but </span><code>numpy</code><span>.</span></p><hr><h1 id="Checklist" data-id="Checklist" style=""><a class="anchor hidden-xs" href="#Checklist" title="Checklist"><span class="octicon octicon-link"></span></a><span>Checklist</span></h1><p><span>Checklist for all the classes and methods (don’t forget to add the necessary properties):</span></p><ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Banking System (6 Points)</span></p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Dataclass </span><code>User</code><span> (1 Point)</span></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Class </span><code>BankAccount</code><span> (2 Points)</span>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>__init__(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>add_money(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>retrieve_money(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>__str__(...)</code></li>
+</ul>
+</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Class </span><code>BankingSystem</code><span> (3 Points)</span>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>__init__(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> non public method </span><code>_checksum(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>create_user_account(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>add_money(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>retrieve_money(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>transfer_money(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>account_info(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>remove_account(...)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Dataset Exploration System (14 Points)</span></p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Class </span><code>ConfigReader</code><span> (1 Point)</span>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static method </span><code>read_json_config(...)</code></li>
+</ul>
+</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Abstract Class </span><code>Plotter</code><span> (2 Points)</span>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> class method </span><code>get_plotter_classes(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static abstract method </span><code>plot_feature(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static abstract method </span><code>plot_feature_vs_target(...)</code></li>
+</ul>
+</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Class </span><code>BarPlotter</code><span> (2 Points)</span>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static method </span><code>plot_feature(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static method </span><code>plot_feature_vs_target(...)</code></li>
+</ul>
+</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Class </span><code>HistogramPlotter</code><span> (2 Points)</span>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static method </span><code>plot_feature(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static method </span><code>plot_feature_vs_target(...)</code></li>
+</ul>
+</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Class </span><code>BoxPlotter</code><span> (2 Points)</span>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static method </span><code>plot_feature(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> static method </span><code>plot_feature_vs_target(...)</code></li>
+</ul>
+</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Class </span><code>DatasetExplorer</code><span> (5 Points)</span>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>__init__(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>__str__(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>print_feature_names(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>print_feature_description(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>plot_feature(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>plot_feature_vs_target(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>calculate_correlation_between_features(...)</code></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> method </span><code>print_quartiles_of_feature(...)</code></li>
+</ul>
+</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox" disabled="disabled"><span> Bonus Points (3 Points)</span></li>
+</ul>
+</li>
+</ul></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#Assignment-1-Basic-Concepts-of-Object-Oriented-Programming--20-Points" title="Assignment 1: Basic Concepts of Object-Oriented Programming | 20 Points">Assignment 1: Basic Concepts of Object-Oriented Programming | 20 Points</a><ul class="nav">
+<li class=""><a href="#Introduction" title="Introduction">Introduction</a></li>
+<li class=""><a href="#General-Information" title="General Information">General Information</a><ul class="nav">
+<li><a href="#Deadline" title="Deadline">Deadline</a></li>
+<li class=""><a href="#Submission-Files" title="Submission Files">Submission Files</a></li>
+<li class=""><a href="#Comment-Header" title="Comment Header">Comment Header</a></li>
+<li class=""><a href="#Coding-Standard-and-Code-Quality" title="Coding Standard and Code Quality:">Coding Standard and Code Quality:</a></li>
+<li class=""><a href="#Allowed-Packages" title="Allowed Packages">Allowed Packages</a></li>
+<li class=""><a href="#Automated-Testing-amp-Feedback" title="Automated Testing &amp; Feedback">Automated Testing &amp; Feedback</a></li>
+<li><a href="#File-test_classesipynb" title="File test_classes.ipynb">File test_classes.ipynb</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#Part-1-Warm-Up-Task-Banking-System-6-Points" title="Part 1: Warm-Up Task: Banking System (6 Points)">Part 1: Warm-Up Task: Banking System (6 Points)</a><ul class="nav">
+<li class="invisable-node"><ul class="nav">
+<li><a href="#Dataclass-User-1P" title="Dataclass User (1P)">Dataclass User (1P)</a></li>
+<li><a href="#Class-BankAccount-2P" title="Class BankAccount (2P)">Class BankAccount (2P)</a></li>
+<li><a href="#Class-BankingSystem-3P" title="Class BankingSystem (3P)">Class BankingSystem (3P)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#Part-2-Dataset-Exploration-System-14-Points" title="Part 2: Dataset Exploration System (14 Points)">Part 2: Dataset Exploration System (14 Points)</a><ul class="nav">
+<li><a href="#Datasets" title="Datasets">Datasets</a><ul class="nav">
+<li><a href="#Heart-Disease-Dataset" title="Heart Disease Dataset">Heart Disease Dataset</a></li>
+<li><a href="#Parkinson-Speech-Dataset" title="Parkinson Speech Dataset">Parkinson Speech Dataset</a></li>
+<li><a href="#Dataset-Sources" title="Dataset Sources">Dataset Sources</a></li>
+</ul>
+</li>
+<li><a href="#General-Functionality-of-the-System" title="General Functionality of the System">General Functionality of the System</a><ul class="nav">
+<li><a href="#Input-Files" title="Input Files">Input Files</a></li>
+<li><a href="#Loading-Data" title="Loading Data">Loading Data</a></li>
+<li><a href="#Plotting-and-Calculating-Metrics" title="Plotting and Calculating Metrics">Plotting and Calculating Metrics</a></li>
+</ul>
+</li>
+<li><a href="#Provided-Code" title="Provided Code">Provided Code</a><ul class="nav">
+<li><a href="#Class-Dataset" title="Class Dataset">Class Dataset</a></li>
+</ul>
+</li>
+<li><a href="#Description-of-the-Required-Classes" title="Description of the Required Classes">Description of the Required Classes</a><ul class="nav">
+<li><a href="#Class-ConfigReader-1P" title="Class ConfigReader (1P)">Class ConfigReader (1P)</a></li>
+<li><a href="#Abstract-Class-Plotter-2P" title="Abstract Class Plotter (2P)">Abstract Class Plotter (2P)</a></li>
+<li><a href="#Plotter-Classes-6P" title="Plotter Classes (6P)">Plotter Classes (6P)</a></li>
+<li><a href="#Class-DatasetExplorer-5P" title="Class DatasetExplorer (5P)">Class DatasetExplorer (5P)</a></li>
+</ul>
+</li>
+<li><a href="#Bonus-Points-3P" title="Bonus Points (3P)">Bonus Points (3P)</a></li>
+</ul>
+</li>
+<li class=""><a href="#Checklist" title="Checklist">Checklist</a></li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#Assignment-1-Basic-Concepts-of-Object-Oriented-Programming--20-Points" title="Assignment 1: Basic Concepts of Object-Oriented Programming | 20 Points">Assignment 1: Basic Concepts of Object-Oriented Programming | 20 Points</a><ul class="nav">
+<li class=""><a href="#Introduction" title="Introduction">Introduction</a></li>
+<li class=""><a href="#General-Information" title="General Information">General Information</a><ul class="nav">
+<li><a href="#Deadline" title="Deadline">Deadline</a></li>
+<li class=""><a href="#Submission-Files" title="Submission Files">Submission Files</a></li>
+<li class=""><a href="#Comment-Header" title="Comment Header">Comment Header</a></li>
+<li class=""><a href="#Coding-Standard-and-Code-Quality" title="Coding Standard and Code Quality:">Coding Standard and Code Quality:</a></li>
+<li class=""><a href="#Allowed-Packages" title="Allowed Packages">Allowed Packages</a></li>
+<li class=""><a href="#Automated-Testing-amp-Feedback" title="Automated Testing &amp; Feedback">Automated Testing &amp; Feedback</a></li>
+<li><a href="#File-test_classesipynb" title="File test_classes.ipynb">File test_classes.ipynb</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#Part-1-Warm-Up-Task-Banking-System-6-Points" title="Part 1: Warm-Up Task: Banking System (6 Points)">Part 1: Warm-Up Task: Banking System (6 Points)</a><ul class="nav">
+<li class="invisable-node"><ul class="nav">
+<li><a href="#Dataclass-User-1P" title="Dataclass User (1P)">Dataclass User (1P)</a></li>
+<li><a href="#Class-BankAccount-2P" title="Class BankAccount (2P)">Class BankAccount (2P)</a></li>
+<li><a href="#Class-BankingSystem-3P" title="Class BankingSystem (3P)">Class BankingSystem (3P)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#Part-2-Dataset-Exploration-System-14-Points" title="Part 2: Dataset Exploration System (14 Points)">Part 2: Dataset Exploration System (14 Points)</a><ul class="nav">
+<li><a href="#Datasets" title="Datasets">Datasets</a><ul class="nav">
+<li><a href="#Heart-Disease-Dataset" title="Heart Disease Dataset">Heart Disease Dataset</a></li>
+<li><a href="#Parkinson-Speech-Dataset" title="Parkinson Speech Dataset">Parkinson Speech Dataset</a></li>
+<li><a href="#Dataset-Sources" title="Dataset Sources">Dataset Sources</a></li>
+</ul>
+</li>
+<li><a href="#General-Functionality-of-the-System" title="General Functionality of the System">General Functionality of the System</a><ul class="nav">
+<li><a href="#Input-Files" title="Input Files">Input Files</a></li>
+<li><a href="#Loading-Data" title="Loading Data">Loading Data</a></li>
+<li><a href="#Plotting-and-Calculating-Metrics" title="Plotting and Calculating Metrics">Plotting and Calculating Metrics</a></li>
+</ul>
+</li>
+<li><a href="#Provided-Code" title="Provided Code">Provided Code</a><ul class="nav">
+<li><a href="#Class-Dataset" title="Class Dataset">Class Dataset</a></li>
+</ul>
+</li>
+<li><a href="#Description-of-the-Required-Classes" title="Description of the Required Classes">Description of the Required Classes</a><ul class="nav">
+<li><a href="#Class-ConfigReader-1P" title="Class ConfigReader (1P)">Class ConfigReader (1P)</a></li>
+<li><a href="#Abstract-Class-Plotter-2P" title="Abstract Class Plotter (2P)">Abstract Class Plotter (2P)</a></li>
+<li><a href="#Plotter-Classes-6P" title="Plotter Classes (6P)">Plotter Classes (6P)</a></li>
+<li><a href="#Class-DatasetExplorer-5P" title="Class DatasetExplorer (5P)">Class DatasetExplorer (5P)</a></li>
+</ul>
+</li>
+<li><a href="#Bonus-Points-3P" title="Bonus Points (3P)">Bonus Points (3P)</a></li>
+</ul>
+</li>
+<li class=""><a href="#Checklist" title="Checklist">Checklist</a></li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
