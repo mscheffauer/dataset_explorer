@@ -1,0 +1,24 @@
+{
+    "plot_types": {
+        "age": "box",
+        "sex": "bar",
+        "cp": "histogram",
+        "trestbps": "box",
+        "chol": "box",
+        "fbs": "bar",
+        "restecg": "histogram",
+        "thalach": "histogram",
+        "exang": "bar",
+        "oldpeak": "histogram",
+        "slope": "histogram",
+        "ca": "bar",
+        "thal": "bar",
+        "target": "bar"
+    },
+    "target_feature": "target",
+    "column_info_file": "column_info_heart_disease.json",
+    "data_folder": "heart_disease_data",
+    "dataset_name": "Heart Disease Dataset",
+    "na_characters": ["?"],
+    "binarize_threshold": 1
+}
